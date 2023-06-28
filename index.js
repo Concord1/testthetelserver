@@ -3,6 +3,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const fetch = require('node-fetch');
+const bodyParser = require('body-parser');
+
 
 // Load environment variables
 dotenv.config();
@@ -16,7 +18,7 @@ const port = process.env.PORT || 3300;
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.json());
 // Define a route for the homepage
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
