@@ -98,7 +98,7 @@
             async function posttoDynamo(x, y, z, code){
                 var myHeaders = new Headers();
                 myHeaders.append("Content-Type", "application/json");
-                const data = { "x":x, "y":y, "z":z, "code":code }
+                const data = { "x":x.toString(), "y":y.toString(), "z":z.toString(), "code":code.toString() }
                 var raw = JSON.stringify(data);
                 var requestOptions = {
                     method: 'POST',
