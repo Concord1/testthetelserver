@@ -29,7 +29,7 @@ app.listen(port, () => {
 });
 
 app.post('/sendtoDynamo', async (request, response) =>{
-    console.log(request)
+    console.log(request.body)
     try {
 	delete request.headers.host;
   	delete request.headers.referer;
