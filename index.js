@@ -31,11 +31,12 @@ app.listen(port, () => {
 });
 
 app.post('/sendtoDynamo', async (request, response) =>{
-    console.log(request.body)
     try {
 	delete request.headers.host;
   	delete request.headers.referer;
+	console.log(request.body)
         const fetchResponse = await fetch(serverapiURL, request);
+	    
       } catch (error) {
         console.error('Error:', error);
         response.status(500).json({ error: 'Internal server error' });
