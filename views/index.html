@@ -87,7 +87,7 @@
                     return code;
                 }
                 const codeDisplay = document.getElementById('uniqueCode');
-                code = Math.floor((Math.random() * 100) + 1);
+                code = (Math.floor((Math.random() * 100) + 1)).toString();
                 codeDisplay.textContent = `Code: ${code}`;
                 codeAlreadyExists = true;
                 return code;
