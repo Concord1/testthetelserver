@@ -36,9 +36,6 @@ app.post('/sendtoDynamo', async (request, response) =>{
 	delete request.headers.host;
   	delete request.headers.referer;
         const fetchResponse = await fetch(serverapiURL, request);
-        const data = await fetchResponse.json();
-        console.log(data);
-        response.json({ });
       } catch (error) {
         console.error('Error:', error);
         response.status(500).json({ error: 'Internal server error' });
