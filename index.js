@@ -31,6 +31,8 @@ app.listen(port, () => {
 app.post('/sendtoDynamo', async (request, response) =>{
     console.log("HIIII")
     try {
+	delete request.headers.host;
+  	delete request.headers.referer;
         const fetchResponse = await fetch(serverapiURL, request);
         const data = await fetchResponse.json();
         console.log(data);
