@@ -80,7 +80,7 @@
          </style>
          <script>
             // todo connect with dynamo to see if the generated code already exists in the db
-            let code = "";
+            var code = "";
             var codeAlreadyExists = false;
             function generateCode(){
                 if(codeAlreadyExists){
@@ -154,7 +154,6 @@
                                 lastApiCallTime = currentTime;
                                 console.log("OK")
                                 posttoDynamo(x.toFixed(2), y.toFixed(2), z.toFixed(2), code);
-                                console.log(code)
                         }
                     });
                     }
