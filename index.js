@@ -37,7 +37,7 @@ app.post('/sendtoDynamo', async (request, response) =>{
 	console.log(request.body)
         const fetchResponse = await fetch(serverapiURL, request);
 	//console.log(fetchResponse);
-	console.log(fetchResponse.headers.get('content-type');
+	console.log(fetchResponse.headers.get('content-type'));
       } catch (error) {
         console.error('Error:', error);
         response.status(500).json({ error: 'Internal server error' });
