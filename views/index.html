@@ -100,6 +100,7 @@
                 myHeaders.append("Content-Type", "application/json");
                 var data = { "x":x.toString(), "y":y.toString(), "z":z.toString(), "code":code.toString() }
                 var raw = JSON.stringify(data);
+                console.log(raw)
                 var requestOptions = {
                     method: 'POST',
                     headers: myHeaders,
