@@ -51,9 +51,7 @@ app.post('/sendtoDynamo', async (request, response) =>{
                 myHeaders.append("Content-Type", "application/json");
                 const data = { "x":"TEST", "y":"TEST", "z":"TEST", "code":"TESTz" }
 		
-		var rb = JSON.stringify(request.body);
-		console.log("From Html: ", rb)
-		
+		var rb = JSON.stringify(request.body);	
                 var raw = JSON.stringify(data);
 		
                 var requestOptions = {
