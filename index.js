@@ -50,7 +50,10 @@ app.post('/sendtoDynamo', async (request, response) =>{
                 var myHeaders = new fetch.Headers();
                 myHeaders.append("Content-Type", "application/json");
                 const data = { "x":"TEST", "y":"TEST", "z":"TEST", "code":"TESTz" }
-		console.log("From Html: ", request.body.x)
+		
+		var rb = JSON.stringify(request.body);
+		console.log("From Html: ", rb)
+		
                 var raw = JSON.stringify(data);
 		
                 var requestOptions = {
