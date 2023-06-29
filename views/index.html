@@ -117,6 +117,7 @@
                 .catch(error => console.log('error', error));
 
             }
+            // The variable t is used to stop the code once stopAccel() is triggered
             var t = true;
             function stopAccel(){
                 window.removeEventListener('deviceorientation', event)
