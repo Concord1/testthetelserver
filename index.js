@@ -58,7 +58,7 @@ app.post('/sendtoDynamo', async (request, response) =>{
                     redirect: 'follow'
                 };
                 // make API call with parameters and use promises to get response
-                const res = await fetch("https://0f0awchk55.execute-api.us-east-2.amazonaws.com/product", requestOptions)
+                const res = await fetch(serverapiURL, requestOptions)
                 .catch(error => console.log('error', error));
 	
 })
