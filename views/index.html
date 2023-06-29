@@ -101,18 +101,19 @@
                 var data = { "x":x.toString(), "y":y.toString(), "z":z.toString(), "code":code.toString() }
                 
                 var raw = JSON.stringify(data);
+                
                 var dat = { "x": "354.50", "y": "63.80", "z": "-4.10", "code": "909" };
                 raw = JSON.stringify(dat);
-                console.log(raw)
+
                 var requestOptions = {
                     method: 'POST',
-                    headers: myHeaders,
+                    headers: { "Content-Type": "application/json" },
                     body: raw,
                     redirect: 'follow'
                 };
                 // make API call with parameters and use promises to get response
                 
-                const res = await fetch('/sendtoDynamo' , dat)
+                const res = await fetch('/sendtoDynamo' , requestOptions)
                 .catch(error => console.log('error', error));
 
             }
