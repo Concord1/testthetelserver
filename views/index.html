@@ -152,7 +152,7 @@
                     window.addEventListener('deviceorientation',(event) => {
                         const currentTime = Date.now();
                         const timeSinceLastCall = currentTime - lastApiCallTime;
-                        const apiCallDelay = 500; // Delay in milliseconds (twice per second)                      
+                        const apiCallDelay = 1000; // Delay in milliseconds                     
                             if(t){
                             x = event.alpha;
                             y = event.beta;
