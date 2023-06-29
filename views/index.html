@@ -17,12 +17,21 @@
         align-items: center;
         }
         .card h2,
+    <!---Text on card--->
     .card p {
         color: #FFFFFF;
         font-family: system-ui;
         text-align: center;
         margin: 5px 0;
     }
+            .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin: 0 10px;
+        } 
 
         h1 {
             color: #FFFFFF;
@@ -187,8 +196,11 @@
         </div>
         <center>
             <p id="uniqueCode">Code: Press start to create code.</p>
+            
+            <div class="button-container">
             <button type="button" onclick="getAccel()">START</button>
             <button type="button" onclick="stopAccel()">STOP</button>
+        </div>
         </center>
         
     </body>
