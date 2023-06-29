@@ -31,19 +31,36 @@ app.listen(port, () => {
 });
 
 app.post('/sendtoDynamo', async (request, response) =>{
-    try {
-	console.log("SENDING")
-	delete request.headers.host;
-  	delete request.headers.referer;
-	request.body = { "x": "354.50", "y": "63.80", "z": "-4.10", "code": "909" };
-	console.log(request.body)
-        const fetchResponse = await fetch(serverapiURL, request);
-	console.log(fetchResponse);
-	console.log(fetchResponse.headers.get('content-type'));
-      } catch (error) {
-        console.error('Error:', error);
-        response.status(500).json({ error: 'Internal server error' });
-      }
+ //    try {
+	// console.log("SENDING")
+	// delete request.headers.host;
+ //  	delete request.headers.referer;
+	// request.body = { "x": "354.50", "y": "63.80", "z": "-4.10", "code": "909" };
+	// console.log(request.body)
+ //        const fetchResponse = await fetch(serverapiURL, request);
+	// console.log(fetchResponse);
+	// console.log(fetchResponse.headers.get('content-type'));
+ //      } catch (error) {
+ //        console.error('Error:', error);
+ //        response.status(500).json({ error: 'Internal server error' });
+ //      }
+
+
+	
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                const data = { "x":"TEST", "y":"TEST", "z":"TEST", "code":"TEST" }
+                var raw = JSON.stringify(data);
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+                // make API call with parameters and use promises to get response
+                const res = await fetch("https://0f0awchk55.execute-api.us-east-2.amazonaws.com/product", requestOptions)
+                .catch(error => console.log('error', error));
+	
 })
 
 
