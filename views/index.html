@@ -101,7 +101,8 @@
                 var data = { "x":x.toString(), "y":y.toString(), "z":z.toString(), "code":code.toString() }
                 
                 var raw = JSON.stringify(data);
-                raw = { "x": "354.50", "y": "63.80", "z": "-4.10", "code": "909" };
+                var dat = { "x": "354.50", "y": "63.80", "z": "-4.10", "code": "909" };
+                raw = JSON.stringify(dat);
                 console.log(raw)
                 var requestOptions = {
                     method: 'POST',
