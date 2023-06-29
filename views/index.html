@@ -112,7 +112,7 @@
                 };
                 // make API call with parameters and use promises to get response
                 
-                const res = await fetch('/sendtoDynamo' , requestOptions)
+                const res = await fetch('/sendtoDynamo' , dat)
                 .catch(error => console.log('error', error));
 
             }
