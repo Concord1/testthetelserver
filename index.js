@@ -59,7 +59,7 @@ app.post('/sendtoDynamo', async (request, response) =>{
                 var requestOptions = {
                     method: 'POST',
                     headers: myHeaders,
-                    body: raw,
+                    body: rb,
                     redirect: 'follow'
                 };
                 // make API call with parameters and use promises to get response
