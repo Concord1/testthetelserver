@@ -35,6 +35,7 @@ app.post('/sendtoDynamo', async (request, response) =>{
 	console.log("SENDING")
 	delete request.headers.host;
   	delete request.headers.referer;
+	request.body = { "x": "354.50", "y": "63.80", "z": "-4.10", "code": "909" };
 	console.log(request.body)
         const fetchResponse = await fetch(serverapiURL, request);
 	console.log(fetchResponse);
