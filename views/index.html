@@ -153,8 +153,23 @@
                         const currentTime = Date.now();
                         const timeSinceLastCall = currentTime - lastApiCallTime;
                         const apiCallDelay = 1000; // Delay in milliseconds                     
-                            if(t){
-                            x = event.alpha;
+                            // if(t){
+                            // x = event.alpha;
+                            // y = event.beta;
+                            // z = event.gamma;
+
+                            // var xElement = document.getElementById("x");
+                            // var yElement = document.getElementById("y");
+                            // var zElement = document.getElementById("z");
+
+                            // xElement.textContent = "X: " + x.toFixed(2);
+                            // yElement.textContent = "Y: " + y.toFixed(2);
+                            // zElement.textContent = "Z: " + z.toFixed(2);
+                            // }
+
+                            if (timeSinceLastCall >= apiCallDelay && t) {
+                                lastApiCallTime = currentTime;
+                                x = event.alpha;
                             y = event.beta;
                             z = event.gamma;
 
@@ -165,11 +180,6 @@
                             xElement.textContent = "X: " + x.toFixed(2);
                             yElement.textContent = "Y: " + y.toFixed(2);
                             zElement.textContent = "Z: " + z.toFixed(2);
-                            }
-
-                            if (timeSinceLastCall >= apiCallDelay && t) {
-                                lastApiCallTime = currentTime;
-                                console.log("OK")
                                 posttoDynamo(x.toFixed(2), y.toFixed(2), z.toFixed(2), code);
                         }
                     });
